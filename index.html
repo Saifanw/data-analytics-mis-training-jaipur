@@ -1,620 +1,425 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Practical Data Analytics and MIS Executive training in Jhotwara, Jaipur. Master Advanced Excel, Power Query, SQL, Power BI, Python, dashboards, MIS reporting and real-world projects.">
-<meta name="keywords" content="Data Analytics course Jaipur, MIS Executive course Jaipur, Advanced Excel, Power BI, SQL, Python, Jhotwara">
-<title>Data Analytics & MIS Executive | Jhotwara Jaipur</title>
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Data Analytics & MIS Training in Jaipur | Excel, Power BI, SQL, Python</title>
+<meta name="description" content="Practical Data Analytics and MIS Executive training in Jaipur covering Advanced Excel, Power Query, SQL, Power BI, DAX, Python, dashboards, reporting and interview preparation.">
 <style>
 :root{
-  --bg:#f5f8fc;
-  --bg2:#ffffff;
-  --card:#ffffff;
-  --card2:#f7fbff;
-  --text:#122033;
-  --muted:#617083;
-  --line:#e3eaf2;
-  --blue:#1769e0;
-  --cyan:#0aa6c8;
-  --green:#19a957;
-  --gold:#f0a900;
-  --navy:#102b4e;
-  --shadow:0 16px 45px rgba(26,55,88,.10);
+  --ink:#132238;--ink2:#1c3553;--blue:#2563d7;--blue2:#eaf2ff;
+  --gold:#b98616;--gold2:#d9ae42;--green:#0f9652;--green2:#e9f8f0;
+  --bg:#f5f8fc;--card:#fff;--muted:#68798e;--line:#dfe6ef;
+  --shadow:0 18px 50px rgba(20,42,70,.09);--radius:20px;
 }
-*{box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:Inter,Segoe UI,Arial,sans-serif;
-  color:var(--text);
-  background:linear-gradient(180deg,#f7faff 0%,#ffffff 34%,#f5f8fc 100%);
-  line-height:1.6;
-}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
 a{text-decoration:none;color:inherit}
-.wrap{width:min(92%,1180px);margin:auto}
-.nav{
-  position:sticky;top:0;z-index:50;
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--line);
-  box-shadow:0 3px 18px rgba(25,52,80,.05);
-}
-.navin{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{font-size:18px;font-weight:900;letter-spacing:-.3px}
-.brand span{color:var(--cyan)}
-.links{display:flex;align-items:center;gap:20px}
-.links a{font-size:13px;color:#536579}
-.links a:hover{color:var(--navy)}
-.navcta{background:var(--blue);color:#04111e!important;padding:9px 14px;border-radius:9px;font-weight:800}
+.container{width:min(1180px,92%);margin:auto}
+.topbar{height:40px;background:#101a2a;color:#fff;font-size:12px}
+.topbar .container{height:100%;display:flex;align-items:center;justify-content:space-between}
+.topbar a{font-weight:850}.topright{display:flex;gap:14px}
+.navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.brand{display:flex;align-items:center;gap:11px}
+.logo{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#173a68,#2563d7);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:950;box-shadow:0 8px 18px rgba(37,99,215,.2)}
+.brand-title{font-size:20px;font-weight:950;line-height:1.05}.brand-sub{font-size:9px;letter-spacing:1.5px;color:var(--gold);font-weight:950;margin-top:4px}
+.navlinks{display:flex;align-items:center;gap:22px;font-size:12px;font-weight:850;color:#3a4a5f}
+.navlinks a:hover{color:var(--blue)}.navwa{background:var(--green);color:#fff!important;padding:10px 14px;border-radius:9px}
+.menu{display:none;border:0;background:var(--ink);color:#fff;border-radius:8px;padding:9px 11px}
 
-.marketbar{
-  border-bottom:1px solid var(--line);
-  background:#eef5fc;
-  overflow:hidden;
-}
-.marketinner{
-  display:flex;align-items:center;gap:18px;
-  min-height:36px;white-space:nowrap;
-  overflow:auto;scrollbar-width:none;
-}
-.marketinner::-webkit-scrollbar{display:none}
-.live{color:#d84a4a;font-size:11px;font-weight:900}
-.marketitem{font-size:12px;color:#52657a}
-.marketitem b{color:var(--navy)}
-.marketitem span{color:#16894b;margin-left:5px}
+/* FRONT DYNAMIC CAREER STRIP */
+.career-strip{background:linear-gradient(90deg,#f7fbff,#fff,#f8fbff);border-bottom:1px solid #dce6f1;box-shadow:0 5px 18px rgba(21,49,82,.06)}
+.career-inner{min-height:67px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.career-message{display:flex;align-items:center;gap:12px;min-width:0}
+.live-dot{width:10px;height:10px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 6px rgba(37,99,215,.10);flex:none}
+.career-copy{min-width:0}
+.career-main{font-size:14px;font-weight:950;white-space:nowrap;transition:.25s}
+.career-main b{color:var(--blue)}
+.career-sub{font-size:10px;color:var(--muted);white-space:nowrap}
+.career-btn{background:var(--green);color:#fff;padding:10px 15px;border-radius:9px;font-size:11px;font-weight:950;white-space:nowrap;box-shadow:0 7px 18px rgba(15,150,82,.16)}
 
-.hero{padding:72px 0 62px}
-.heroGrid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:7px;
-  padding:7px 12px;border:1px solid #b9d9f5;
-  background:#edf7ff;border-radius:99px;
-  color:var(--cyan);font-size:12px;font-weight:800;
-}
-h1{
-  font-size:clamp(42px,6vw,70px);
-  line-height:1.02;letter-spacing:-2.8px;
-  margin:18px 0;
-}
-h1 span{color:var(--cyan)}
-.heroLead{font-size:18px;color:#536579;max-width:700px}
-.buttons{display:flex;gap:11px;flex-wrap:wrap;margin-top:25px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 17px;border-radius:10px;font-weight:850;font-size:14px}
-.primary{background:var(--blue);color:#03101b}
-.whatsapp{background:var(--green);color:#031108}
-.secondary{background:#ffffff;border:1px solid var(--line)}
-.location{
-  display:inline-flex;align-items:center;gap:7px;margin-top:17px;
-  color:#536579;font-size:13px;
-}
-.location:hover{color:var(--navy)}
+/* JOB-ORIENTED FRONT SKILL STRIP */
+.front-skills{background:#fff;border-bottom:1px solid #dce5ef;box-shadow:0 6px 18px rgba(20,42,70,.055)}
+.front-skills-inner{min-height:82px;display:flex;align-items:center;gap:9px;padding:10px 0}
+.front-label{font-size:9px;letter-spacing:1.2px;color:#738196;font-weight:950;white-space:nowrap;margin-right:3px}
+.tool-chip{display:flex;align-items:center;gap:8px;background:#f8fafc;border:1px solid #dfe6ef;border-radius:12px;padding:8px 10px;min-width:150px;transition:.2s}
+.tool-chip:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(20,42,70,.08);border-color:#c6d8f4}
+.tool-icon{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:#132238;color:#fff;font-size:12px;font-weight:950;flex:none}
+.tool-chip b{display:block;font-size:10px;line-height:1.2}
+.tool-chip small{display:block;color:#78879a;font-size:7.5px;margin-top:2px;white-space:nowrap}
+.tool-chip.excel .tool-icon{background:#16844a}
+.tool-chip.powerbi .tool-icon{background:#c99012}
+.tool-chip.sql .tool-icon{background:#2563d7}
+.tool-chip.python .tool-icon{background:#346b9a}
+.tool-chip.mis .tool-icon{background:#132238}
 
-.heroCard{
-  position:relative;
-  padding:18px;
-  border:1px solid rgba(110,231,255,.18);
-  border-radius:24px;
-  background:linear-gradient(145deg,#eef7ff,#ffffff);
-  box-shadow:var(--shadow);
-}
-.dashboard{
-  border:1px solid var(--line);
-  background:#ffffff;
-  border-radius:17px;
-  padding:16px;
-}
-.dashTop{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.dashTitle{font-size:13px;font-weight:800}
-.liveDot{font-size:11px;color:#72e3a2}
-.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
-.kpi{padding:12px;border:1px solid var(--line);border-radius:10px;background:#ffffff}
-.kpi small{display:block;color:#718197;font-size:10px}
-.kpi b{display:block;margin-top:3px;font-size:15px}
-.graph{
-  height:185px;margin-top:12px;border:1px solid var(--line);border-radius:12px;
-  position:relative;overflow:hidden;
-  background:
-    linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
-  background-size:32px 32px;
-}
-.graph svg{width:100%;height:100%}
-.cardCaption{padding:13px 3px 0}
-.cardCaption b{font-size:14px}
-.cardCaption p{margin:3px 0 0;color:#718197;font-size:12px}
+/* HERO */
+.hero{background:linear-gradient(135deg,#f5f8fc 0%,#fff 58%,#edf4ff 100%);overflow:hidden}
+.hero-grid{min-height:560px;display:grid;grid-template-columns:1.08fr .92fr;gap:54px;align-items:center;padding:64px 0}
+.kicker{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#a27610;font-weight:950}
+.hero h1{font-size:clamp(43px,5vw,66px);line-height:1.02;letter-spacing:-2.5px;margin:9px 0 18px}
+.hero h1 span{color:var(--blue)}
+.hero-lead{font-size:17px;color:#596b80;max-width:700px;margin-bottom:24px}
+.buttons{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:7px;border-radius:10px;padding:13px 17px;font-size:12px;font-weight:950;border:0}
+.primary{background:var(--blue);color:#fff;box-shadow:0 9px 22px rgba(37,99,215,.18)}
+.green{background:var(--green);color:#fff}.dark{background:var(--ink);color:#fff}.light{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.trust{display:flex;gap:7px;flex-wrap:wrap;margin-top:20px}
+.trust span{font-size:10px;font-weight:850;background:#fff;border:1px solid var(--line);padding:6px 9px;border-radius:999px}
 
-.trustRow{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:12px;margin-top:26px;
-}
-.trust{
-  padding:15px;border:1px solid var(--line);border-radius:12px;
-  background:#ffffff;
-}
-.trust b{display:block;color:var(--cyan);font-size:15px}
-.trust small{color:#98aabd}
+/* JOB TARGETS */
+.job-targets{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.job-targets span{font-size:8px;font-weight:900;color:#3c5067;background:#fff;border:1px solid #dfe6ef;border-radius:999px;padding:5px 8px}
 
-section{padding:76px 0}
-.sectionHead{text-align:center;max-width:760px;margin:0 auto 40px}
-.sectionHead .eyebrow{margin-bottom:13px}
-h2{font-size:clamp(30px,4vw,45px);line-height:1.12;letter-spacing:-1.2px;margin:0}
-.sectionHead p{color:var(--muted);margin:12px auto 0}
+/* DASHBOARD VISUAL */
+.dashboard{background:#fff;border:1px solid #dce5ef;border-radius:22px;padding:18px;box-shadow:var(--shadow)}
+.dash-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.dash-title{font-weight:950;font-size:14px}.dash-live{font-size:9px;color:var(--green);font-weight:950;background:var(--green2);padding:5px 8px;border-radius:999px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kpi{background:#f7f9fc;border:1px solid #e7edf4;border-radius:12px;padding:11px}
+.kpi small{font-size:8px;color:#7b8999}.kpi strong{display:block;font-size:17px;margin-top:3px}
+.chart{margin-top:10px;border:1px solid #e6ecf3;border-radius:13px;padding:10px;height:170px;background:#fbfcfe}
+.chart svg{width:100%;height:100%}
+.skill-row{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:10px}
+.skill{background:var(--ink);color:#fff;border-radius:9px;text-align:center;padding:7px 3px;font-size:9px;font-weight:900}
 
-.toolGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.tool{
-  min-height:145px;padding:20px;
-  border:1px solid var(--line);border-radius:17px;
-  background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
-  transition:.2s;
-}
-.tool:hover{transform:translateY(-3px);border-color:rgba(110,231,255,.28)}
-.tool .toolIcon{font-size:32px}
-.tool h3{margin:8px 0 2px;font-size:17px}
-.tool p{margin:0;color:#8fa4b8;font-size:12px}
+/* SECTIONS */
+.section{padding:76px 0}.soft{background:var(--bg)}.cream{background:#fbf8ef}
+.head{text-align:center;max-width:760px;margin:0 auto 38px}.head h2{font-size:36px;line-height:1.12;letter-spacing:-1px;margin:7px 0 9px}.head p{color:var(--muted);font-size:14px}
 
-.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.featureList{display:grid;gap:12px;margin-top:22px}
-.feature{
-  display:flex;gap:12px;align-items:flex-start;
-  padding:14px;border:1px solid var(--line);border-radius:12px;
-  background:#ffffff;
-}
-.check{
-  width:25px;height:25px;flex:none;border-radius:50%;
-  display:grid;place-items:center;background:#e7f6fb;
-  color:var(--cyan);font-weight:900;font-size:12px;
-}
-.feature b{display:block;font-size:14px}
-.feature span{display:block;color:#65768a;font-size:12px;margin-top:2px}
+/* SKILLS */
+.skill-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}
+.skill-card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:21px;transition:.2s}
+.skill-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#c6d8f4}
+.skill-card .icon{font-size:25px}.skill-card h3{font-size:16px;margin:8px 0 4px}.skill-card p{font-size:10px;color:var(--muted)}
+.skill-card .tags{margin-top:11px;display:flex;gap:5px;flex-wrap:wrap}.tag{font-size:8px;background:#eef3f9;padding:4px 6px;border-radius:5px;font-weight:800}
 
-.workflow{
-  padding:28px;border:1px solid rgba(110,231,255,.17);
-  border-radius:22px;background:#eef7ff;
-}
-.workflowRow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.step{
-  padding:17px 12px;text-align:center;border:1px solid var(--line);
-  border-radius:13px;background:#ffffff
-}
-.stepNum{color:var(--cyan);font-size:11px;font-weight:900}
-.step b{display:block;margin-top:5px;font-size:13px}
-.step span{color:#718197;font-size:11px}
+/* WORKFLOW */
+.workflow{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.workflow-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 8px 25px rgba(20,42,68,.05)}
+.workflow-card h3{font-size:22px;margin:7px 0}.workflow-card p{font-size:12px;color:var(--muted)}
+.steps{margin-top:19px;display:grid;gap:10px}
+.step{display:flex;gap:11px;align-items:center}.num{width:29px;height:29px;border-radius:8px;background:var(--blue2);color:var(--blue);display:grid;place-items:center;font-size:11px;font-weight:950}.step strong{font-size:11px}.step small{display:block;color:var(--muted);font-size:9px}
+.outcomes{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px}.outcome{padding:11px;background:#f7f9fc;border-radius:9px;font-size:10px;font-weight:850}
 
-.careerGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.careerCard{
-  padding:22px;border:1px solid var(--line);border-radius:17px;
-  background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.018))
-}
-.careerCard .big{font-size:30px}
-.careerCard h3{margin:8px 0 4px}
-.careerCard p{margin:0;color:#65768a;font-size:13px}
+/* PROJECTS */
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.project{background:#fff;border:1px solid var(--line);border-radius:17px;padding:22px;position:relative;overflow:hidden}
+.project:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--blue)}
+.project h3{font-size:16px;margin-bottom:5px}.project p{font-size:10px;color:var(--muted)}.project ul{margin:12px 0 0 15px;color:#56677b;font-size:9px}
 
-.projectGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.project{
-  padding:22px;border:1px solid var(--line);border-radius:17px;
-  background:#ffffff;min-height:200px;box-shadow:0 8px 24px rgba(26,55,88,.06)
-}
-.projectTag{font-size:10px;color:var(--cyan);font-weight:900;letter-spacing:.7px}
-.project h3{margin:9px 0 5px}
-.project p{color:#65768a;font-size:13px}
-.projectTools{display:flex;gap:6px;flex-wrap:wrap;margin-top:15px}
-.projectTools span{
-  padding:4px 7px;border-radius:6px;background:#ffffff08;
-  border:1px solid var(--line);font-size:10px;color:#536579
-}
+/* MIS */
+.mis-box{display:grid;grid-template-columns:1fr 1fr;gap:22px;background:linear-gradient(135deg,#132238,#23466f);color:#fff;border-radius:23px;padding:35px;box-shadow:0 20px 50px rgba(17,35,58,.17)}
+.mis-box h2{font-size:35px;line-height:1.08;margin:7px 0 10px}.mis-box p{color:#d9e5f1;font-size:12px}
+.mis-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:20px}.mis-list span{font-size:10px;font-weight:850;padding:8px 10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:7px}
+.career-box{background:#fff;color:var(--ink);border-radius:16px;padding:21px}.career-box h3{font-size:20px}.role{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:10px 0;font-size:11px}.role:last-child{border:0}.role span{color:var(--muted)}
 
-.misSection{
-  background:linear-gradient(180deg,#eef7ff,transparent);
-}
-.misGrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.misCard{
-  padding:25px;border:1px solid var(--line);border-radius:19px;background:#ffffff
-}
-.misCard h3{margin-top:0}
-.misItems{display:grid;gap:9px}
-.misItem{
-  display:flex;justify-content:space-between;gap:15px;
-  padding:10px 0;border-bottom:1px solid var(--line);
-  font-size:13px;color:#c5d2df
-}
-.misItem:last-child{border-bottom:0}
-.misItem span{color:#718197}
+/* SALARY / CAREER */
+.salary-box{background:linear-gradient(135deg,#f4f8ff,#fff);border:1px solid #dbe7f5;border-radius:21px;padding:30px;display:grid;grid-template-columns:1.15fr .85fr;gap:25px;align-items:center}
+.salary-box h2{font-size:32px;line-height:1.1}.salary-range{font-size:43px;font-weight:950;color:var(--blue);margin:9px 0}.salary-note{font-size:10px;color:var(--muted)}
+.salary-roles{background:#fff;border:1px solid var(--line);border-radius:15px;padding:17px}.salary-roles h3{font-size:16px;margin-bottom:5px}.salary-roles div{padding:8px 0;border-bottom:1px solid #edf1f5;font-size:10px}.salary-roles div:last-child{border:0}
 
-.ctaBox{
-  text-align:center;padding:54px 25px;border-radius:23px;
-  border:1px solid rgba(110,231,255,.2);
-  background:linear-gradient(135deg,#eef7ff,#ffffff);
-}
-.ctaBox p{max-width:650px;margin:12px auto 0;color:#65768a}
+/* CTA / CONTACT */
+.cta{padding:60px 0;background:#fbf8ef;border-top:1px solid #eee5cc;border-bottom:1px solid #eee5cc}
+.cta-box{background:var(--ink);color:#fff;border-radius:22px;padding:34px;display:flex;justify-content:space-between;align-items:center;gap:20px}.cta-box h2{font-size:32px;line-height:1.1;margin:6px 0}.cta-box p{font-size:12px;color:#d7e1eb;max-width:680px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.contact-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:var(--shadow)}.contact-card h3{font-size:24px;margin-bottom:10px}.line{display:flex;gap:14px;border-bottom:1px solid #edf1f5;padding:12px 0;font-size:11px}.line:last-child{border:0}.label{width:75px;color:#8290a1;font-size:9px;font-weight:950;text-transform:uppercase}.map-card{min-height:310px;border-radius:20px;background:linear-gradient(135deg,#dce7f2,#eef3f8);display:grid;place-items:center;text-align:center;border:1px solid var(--line)}.map-card div{background:#fff;padding:18px;border-radius:15px;box-shadow:var(--shadow)}.map-card strong{display:block;font-size:15px}.map-card span{font-size:10px;color:var(--muted)}
 
-.contactGrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-.contactCard{
-  padding:22px;border:1px solid var(--line);border-radius:17px;background:#ffffff
-}
-.contactCard span{font-size:12px;color:#718197}
-.contactCard strong{display:block;margin-top:5px;font-size:15px}
-.mapBtn{
-  display:inline-flex;margin-top:15px;padding:9px 13px;
-  border:1px solid #35a7ff55;border-radius:8px;color:#1769e0;
-  font-weight:800;font-size:12px
-}
-footer{border-top:1px solid var(--line);padding:28px 0;color:#718197;font-size:12px}
-.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+/* FLOAT */
+.float{position:fixed;right:20px;bottom:20px;z-index:1200;width:55px;height:55px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:22px;box-shadow:0 13px 30px rgba(15,150,82,.3)}
+.mobilebar{display:none}
 
-
-.salarySection{padding-top:30px}
-.salaryWrap{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:stretch}
-.salaryHero{padding:30px;border-radius:22px;background:linear-gradient(135deg,#102b4e,#1769e0);color:#fff;box-shadow:var(--shadow);position:relative;overflow:hidden}
-.salaryHero:after{content:"₹";position:absolute;right:22px;bottom:-45px;font-size:170px;font-weight:900;opacity:.07}
-.salaryHero .eyebrow{color:#d9f6ff;background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.18)}
-.salaryHero h2{margin-top:14px;color:#fff}
-.salaryBig{font-size:clamp(38px,6vw,62px);font-weight:950;line-height:1;margin:18px 0 8px;letter-spacing:-2px}
-.salaryHero p{margin:0;color:#d9e8f6;max-width:600px;font-size:13px}
-.salaryNote{font-size:11px!important;margin-top:12px!important;color:#b9cee2!important}
-.salaryTableCard{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow)}
-.salaryTableCard h3{margin:0 0 12px}
-.salaryTable{width:100%;border-collapse:collapse;font-size:13px}
-.salaryTable th{text-align:left;color:#718197;font-size:11px;text-transform:uppercase;letter-spacing:.5px;padding:9px 4px;border-bottom:1px solid var(--line)}
-.salaryTable td{padding:11px 4px;border-bottom:1px solid #edf1f5}
-.salaryTable tr:last-child td{border-bottom:0}
-.salaryTable td:last-child{font-weight:850;color:var(--blue);text-align:right}
-.placement{margin-top:20px;padding:24px;border:1px solid #cfe2f5;border-radius:20px;background:#f8fbff}
-.placementGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
-.placementItem{padding:14px;background:#fff;border:1px solid var(--line);border-radius:13px}
-.placementItem b{display:block;font-size:13px}.placementItem span{font-size:11px;color:#718197}
-
-@media(max-width:900px){
-  .links{display:none}
-  .heroGrid,.split,.misGrid{grid-template-columns:1fr}
-  .toolGrid{grid-template-columns:repeat(3,1fr)}
-  .projectGrid,.careerGrid{grid-template-columns:1fr 1fr}
-  .trustRow{grid-template-columns:repeat(2,1fr)}
+/* MOBILE */
+@media(max-width:980px){
+ .navlinks{display:none}.menu{display:block}
+ .hero-grid,.workflow,.salary-box,.mis-box,.contact-grid{grid-template-columns:1fr}
+ .skill-cards{grid-template-columns:repeat(3,1fr)}
+ .projects{grid-template-columns:1fr 1fr}
 }
-@media(max-width:560px){
-  .hero{padding:52px 0 45px}
-  h1{letter-spacing:-1.8px}
-  .heroLead{font-size:16px}
-  section{padding:58px 0}
-  .toolGrid{grid-template-columns:1fr 1fr}
-  .projectGrid,.careerGrid,.contactGrid{grid-template-columns:1fr}
-  .workflowRow{grid-template-columns:1fr 1fr}
-  .kpis{grid-template-columns:1fr 1fr}
-  .trustRow{grid-template-columns:1fr 1fr}
-  .marketinner{gap:12px}
+@media(max-width:620px){
+ body{padding-bottom:60px}
+ .front-skills{overflow:hidden}
+ .front-skills-inner{overflow-x:auto;justify-content:flex-start;min-height:76px;padding:9px 0;scrollbar-width:none}
+ .front-skills-inner::-webkit-scrollbar{display:none}
+ .front-label{display:none}
+ .tool-chip{min-width:145px}
+ .tool-chip small{font-size:7px}
+
+ .topbar{height:38px}.topbar .container{font-size:9px}.topright{gap:7px}.topright span{display:none}
+ .nav{height:68px}.brand-title{font-size:17px}.brand-sub{font-size:7px}.logo{width:39px;height:39px}
+ .career-inner{display:block;padding:10px 0}.career-message{margin-bottom:9px}.career-main{white-space:normal;font-size:12px}.career-sub{white-space:normal;font-size:9px}.career-btn{display:inline-block}
+ .hero-grid{padding:47px 0}.hero h1{font-size:43px;letter-spacing:-1.8px}.hero-lead{font-size:15px}
+ .dashboard{margin-top:3px}.skill-row{grid-template-columns:repeat(5,1fr)}
+ .section{padding:55px 0}.head h2{font-size:30px}
+ .skill-cards,.projects,.contact-grid{grid-template-columns:1fr}
+ .outcomes,.mis-list{grid-template-columns:1fr 1fr}
+ .salary-range{font-size:36px}.salary-box{padding:23px}
+ .mis-box{padding:24px}.mis-box h2{font-size:29px}
+ .cta-box{display:block;padding:27px 22px}.cta-box h2{font-size:28px}.cta-box .btn{margin-top:17px}
+ .float{display:none}
+ .mobilebar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:2000;background:#fff;padding:8px;gap:8px;box-shadow:0 -5px 18px rgba(0,0,0,.13)}
+ .mobilebar a{flex:1;text-align:center;color:#fff;padding:11px;border-radius:8px;font-size:11px;font-weight:950}.mcall{background:var(--ink)}.mwa{background:var(--green)}
 }
 </style>
 </head>
-
 <body>
 
-<nav class="nav">
-  <div class="wrap navin">
-    <a class="brand" href="#home">Data Analytics <span>& MIS</span></a>
-    <div class="links">
-      <a href="#tools">Tools</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#mis">MIS</a>
-      <a href="#career">Career</a>
-      <a href="#contact">Contact</a>
-      <a class="navcta" href="https://wa.me/916350566010?text=Hello%2C%20I%20want%20details%20about%20Data%20Analytics%20%26%20MIS%20training." target="_blank">WhatsApp</a>
-    </div>
-  </div>
-</nav>
+<div class="topbar">
+ <div class="container">
+  <span>Jaipur • Practical Data Analytics & MIS Career Training</span>
+  <div class="topright"><a href="tel:+916350566010">📞 6350566010</a><span>|</span><a href="https://wa.me/916350566010?text=Hello%2C%20I%20want%20Data%20Analytics%20or%20MIS%20training%20details." target="_blank">💬 WhatsApp</a></div>
+ </div>
+</div>
 
-<div class="marketbar">
-  <div class="wrap marketinner">
-    <span class="live">● LIVE LEARNING</span>
-    <span class="marketitem"><b>Excel</b> Advanced Reporting</span>
-    <span class="marketitem"><b>SQL</b> Data Analysis</span>
-    <span class="marketitem"><b>Power BI</b> Dashboards</span>
-    <span class="marketitem"><b>Python</b> Analytics</span>
-    <span class="marketitem"><b>MIS</b> Business Reporting</span>
+<div class="navbar">
+ <nav class="container nav">
+  <a class="brand" href="#home">
+   <div class="logo">DA<br>& MIS</div>
+   <div><div class="brand-title">Data Analytics & MIS</div><div class="brand-sub">PRACTICAL • PROJECTS • CAREER</div></div>
+  </a>
+  <div class="navlinks" id="navlinks">
+   <a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#mis">MIS Track</a><a href="#career">Career</a><a href="#contact">Contact</a>
+   <a class="navwa" target="_blank" href="https://wa.me/916350566010?text=Hello%2C%20I%20want%20career training details in Jaipur.">WhatsApp</a>
+  </div>
+  <button class="menu" onclick="toggleMenu()">☰</button>
+ </nav>
+</div>
+
+<!-- THIS IS THE FRONT DYNAMIC PATTI -->
+<div class="career-strip">
+ <div class="container career-inner">
+  <div class="career-message">
+   <span class="live-dot"></span>
+   <div class="career-copy">
+    <div class="career-main" id="careerMain">💼 <b>Job dhoondh rahe hain? Data Analytics & MIS ke liye Jaipur mein contact karein.</b></div>
+    <div class="career-sub" id="careerSub">Advanced Excel • Power BI • SQL • Python • MIS Reporting • Interview Preparation</div>
+   </div>
+  </div>
+  <a class="career-btn" id="careerBtn" target="_blank" href="https://wa.me/916350566010?text=Hello%2C%20mujhe Jaipur mein MIS job ke liye training aur career guidance chahiye.">💬 Career Enquiry →</a>
+ </div>
+</div>
+
+<!-- JOB-ORIENTED FRONT SKILL STRIP -->
+<div class="front-skills">
+  <div class="container front-skills-inner">
+    <div class="front-label">JOB-ORIENTED SKILLS</div>
+    <a href="#skills" class="tool-chip excel">
+      <span class="tool-icon">X</span>
+      <span><b>Advanced Excel</b><small>Reporting • Lookup • Pivot</small></span>
+    </a>
+    <a href="#skills" class="tool-chip powerbi">
+      <span class="tool-icon">▥</span>
+      <span><b>Power BI</b><small>Dashboard • DAX • KPI</small></span>
+    </a>
+    <a href="#skills" class="tool-chip sql">
+      <span class="tool-icon">&lt;/&gt;</span>
+      <span><b>SQL</b><small>Query • JOIN • Analysis</small></span>
+    </a>
+    <a href="#skills" class="tool-chip python">
+      <span class="tool-icon">🐍</span>
+      <span><b>Python</b><small>Pandas • NumPy • EDA</small></span>
+    </a>
+    <a href="#mis" class="tool-chip mis">
+      <span class="tool-icon">▤</span>
+      <span><b>MIS Executive</b><small>Reports • KPI • MIS</small></span>
+    </a>
   </div>
 </div>
 
-<main>
-
 <section class="hero" id="home">
-  <div class="wrap heroGrid">
-    <div>
-      <span class="eyebrow">📍 Jhotwara, Jaipur • Practical Career Training</span>
-      <h1>Turn Data Into <span>Business Insights.</span></h1>
-      <p class="heroLead">
-        Become job-ready for <strong>MIS Executive, Reporting Executive and Junior Data Analyst</strong> roles with practical training in <strong>Advanced Excel, Power Query, SQL, Power BI and Python</strong> — using business-style datasets, dashboards and portfolio projects.
-      </p>
-
-      <div class="buttons">
-        <a class="btn primary" href="#tools">Explore Skills →</a>
-        <a class="btn whatsapp" href="https://wa.me/916350566010?text=Hello%2C%20I%20want%20details%20about%20Data%20Analytics%20%26%20MIS%20training." target="_blank">💬 WhatsApp</a>
-        <a class="btn secondary" href="tel:+916350566010">📞 Call Now</a>
-      </div>
-
-      <a class="location" href="https://maps.app.goo.gl/jUSizzP7Bh6d6jA6A" target="_blank">📍 58A Gosai Marg, Udyog Nagar, Jhotwara, Jaipur · Open Map ↗</a>
-
-      <div class="trustRow">
-        <div class="trust"><b>Advanced Excel</b><small>Formulas • Pivot • Power Query</small></div>
-        <div class="trust"><b>Power BI</b><small>DAX • KPIs • Dashboards</small></div>
-        <div class="trust"><b>SQL</b><small>Joins • CTE • Windows</small></div>
-        <div class="trust"><b>Python</b><small>Pandas • NumPy • Charts</small></div>
-      </div>
-
-      <div style="margin-top:16px;padding:14px 16px;border:1px solid #cfe2f5;border-radius:14px;background:#f8fbff;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap">
-        <div><strong style="color:#102b4e">💼 Career-Focused Training</strong><div style="font-size:11px;color:#718197">Placement guidance • Resume • Interviews • Portfolio</div></div>
-        <strong style="font-size:20px;color:#1769e0">₹15K–₹50K+*</strong>
-      </div>
-    </div>
-
-    <div class="heroCard">
-      <div class="dashboard">
-        <div class="dashTop">
-          <div class="dashTitle">Business Analytics Dashboard</div>
-          <div class="liveDot">● PRACTICAL WORKFLOW</div>
-        </div>
-        <div class="kpis">
-          <div class="kpi"><small>Revenue</small><b>₹8.42L</b></div>
-          <div class="kpi"><small>Orders</small><b>2,846</b></div>
-          <div class="kpi"><small>Growth</small><b>+18.4%</b></div>
-        </div>
-        <div class="graph">
-          <svg viewBox="0 0 600 230" preserveAspectRatio="none" aria-label="analytics graph">
-            <polyline fill="none" stroke="#35a7ff" stroke-width="5"
-              points="0,190 70,168 130,180 190,130 250,148 315,96 375,115 435,65 505,88 600,38"/>
-            <polyline fill="none" stroke="#6ee7ff" stroke-width="2"
-              points="0,205 70,184 130,193 190,150 250,165 315,117 375,132 435,83 505,103 600,55"/>
-          </svg>
-        </div>
-        <div class="cardCaption">
-          <b>Raw Data → Cleaning → Analysis → Dashboard</b>
-          <p>The same workflow you practise across Excel, SQL, Power BI and Python.</p>
-        </div>
-      </div>
-    </div>
+ <div class="container hero-grid">
+  <div>
+   <div class="kicker">Jhotwara, Jaipur • Job-Oriented Career Training</div>
+   <h1>Learn <span>Excel, Power BI, SQL & Python.</span><br>Prepare for MIS & Data Jobs.</h1>
+   <p class="hero-lead">Job-focused practical training with Advanced Excel, Power Query, SQL, Power BI, DAX, Python, MIS reporting, dashboards, real-style datasets and interview preparation.</p>
+   <div class="buttons">
+    <a class="btn primary" href="#skills">🚀 Explore Skills</a>
+    <a class="btn green" target="_blank" href="https://wa.me/916350566010?text=Hello%2C%20I want Data Analytics and MIS career training details.">💬 WhatsApp Enquiry</a>
+    <a class="btn light" href="#career">🎯 Career Track</a>
+   </div>
+   <div class="trust"><span>✓ Advanced Excel</span><span>✓ Power BI + DAX</span><span>✓ SQL</span><span>✓ Python</span><span>✓ MIS Reporting</span></div>
+   <div class="job-targets">
+     <span>🎯 MIS Executive</span>
+     <span>📊 Junior Data Analyst</span>
+     <span>📈 Reporting Executive</span>
+     <span>⚡ Power BI Analyst</span>
+   </div>
   </div>
+
+  <div class="dashboard">
+   <div class="dash-top"><div class="dash-title">Career Skills Dashboard</div><div class="dash-live">● PRACTICAL TRACK</div></div>
+   <div class="kpis">
+    <div class="kpi"><small>CORE TOOL</small><strong>Excel</strong></div>
+    <div class="kpi"><small>BI TOOL</small><strong>Power BI</strong></div>
+    <div class="kpi"><small>DATABASE</small><strong>SQL</strong></div>
+   </div>
+   <div class="chart">
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+     <path d="M0 124 L55 116 L105 119 L155 91 L210 99 L260 68 L315 75 L365 43 L420 55 L500 19" fill="none" stroke="#2563d7" stroke-width="4"/>
+     <path d="M0 124 L55 116 L105 119 L155 91 L210 99 L260 68 L315 75 L365 43 L420 55 L500 19 L500 150 L0 150Z" fill="rgba(37,99,215,.07)"/>
+     <line x1="0" y1="145" x2="500" y2="145" stroke="#dfe6ef"/>
+    </svg>
+   </div>
+   <div class="skill-row"><div class="skill">EXCEL</div><div class="skill">POWER BI</div><div class="skill">SQL</div><div class="skill">PYTHON</div><div class="skill">MIS</div></div>
+  </div>
+ </div>
 </section>
 
-<section id="tools">
-  <div class="wrap">
-    <div class="sectionHead">
-      <span class="eyebrow">THE ANALYST TOOLKIT</span>
-      <h2>Master the tools that power modern reporting.</h2>
-      <p>Learn each tool for a specific business task instead of collecting software names.</p>
-    </div>
-
-    <div class="toolGrid">
-      <div class="tool"><div class="toolIcon">📗</div><h3>Excel</h3><p>Advanced formulas, PivotTables, lookups & dashboards.</p></div>
-      <div class="tool"><div class="toolIcon">⚙️</div><h3>Power Query</h3><p>Clean, transform and automate repeatable data preparation.</p></div>
-      <div class="tool"><div class="toolIcon">🗄️</div><h3>SQL</h3><p>Query databases, join tables and answer business questions.</p></div>
-      <div class="tool"><div class="toolIcon">📊</div><h3>Power BI</h3><p>Power Query, DAX, modelling, KPIs and interactive dashboards.</p></div>
-      <div class="tool"><div class="toolIcon">🐍</div><h3>Python</h3><p>Pandas, NumPy and Matplotlib for practical data analysis.</p></div>
-    </div>
+<section class="section" id="skills">
+ <div class="container">
+  <div class="head"><div class="kicker">Core Skills</div><h2>Skills Employers Commonly Look For</h2><p>Learn the tools through business-style tasks instead of only watching tutorials.</p></div>
+  <div class="skill-cards">
+   <div class="skill-card"><div class="icon">📊</div><h3>Advanced Excel</h3><p>Reporting, analysis and automation-ready spreadsheet workflows.</p><div class="tags"><span class="tag">XLOOKUP</span><span class="tag">INDEX MATCH</span><span class="tag">Pivot</span></div></div>
+   <div class="skill-card"><div class="icon">🧹</div><h3>Power Query</h3><p>Clean, transform and combine messy business data.</p><div class="tags"><span class="tag">Cleaning</span><span class="tag">Merge</span><span class="tag">Transform</span></div></div>
+   <div class="skill-card"><div class="icon">🗄️</div><h3>SQL</h3><p>Query databases and answer practical business questions.</p><div class="tags"><span class="tag">JOIN</span><span class="tag">CTE</span><span class="tag">Window</span></div></div>
+   <div class="skill-card"><div class="icon">📈</div><h3>Power BI</h3><p>Build interactive dashboards and business reports.</p><div class="tags"><span class="tag">DAX</span><span class="tag">Modeling</span><span class="tag">KPI</span></div></div>
+   <div class="skill-card"><div class="icon">🐍</div><h3>Python</h3><p>Use Python for analysis, cleaning and exploratory work.</p><div class="tags"><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">EDA</span></div></div>
   </div>
+ </div>
 </section>
 
-<section>
-  <div class="wrap split">
-    <div>
-      <span class="eyebrow">FROM BEGINNER TO PRACTICAL</span>
-      <h2 style="margin-top:16px">Learn how an analyst actually works with data.</h2>
-      <p>Instead of learning isolated formulas and commands, practise the complete reporting cycle on business-style datasets.</p>
-
-      <div class="featureList">
-        <div class="feature"><div class="check">✓</div><div><b>Messy data cleaning</b><span>Duplicates, blanks, inconsistent dates, names, numbers and formats.</span></div></div>
-        <div class="feature"><div class="check">✓</div><div><b>Business analysis</b><span>KPIs, trends, comparisons, categories and management questions.</span></div></div>
-        <div class="feature"><div class="check">✓</div><div><b>Reporting & dashboards</b><span>Build clear reports that communicate what changed and why.</span></div></div>
-        <div class="feature"><div class="check">✓</div><div><b>Interview-focused practice</b><span>Excel, SQL and Power BI questions with practical problem solving.</span></div></div>
-      </div>
-    </div>
-
-    <div class="workflow">
-      <h3>One workflow. Multiple tools.</h3>
-      <p style="color:#8fa3b6;font-size:13px">See how the skills connect inside a real reporting task.</p>
-      <div class="workflowRow">
-        <div class="step"><div class="stepNum">01</div><b>Collect</b><span>Files / tables</span></div>
-        <div class="step"><div class="stepNum">02</div><b>Clean</b><span>Power Query / Python</span></div>
-        <div class="step"><div class="stepNum">03</div><b>Analyse</b><span>Excel / SQL</span></div>
-        <div class="step"><div class="stepNum">04</div><b>Present</b><span>Power BI / MIS</span></div>
-      </div>
-    </div>
+<section class="section soft">
+ <div class="container workflow">
+  <div class="workflow-card">
+   <div class="kicker">Practical Workflow</div><h3>Messy Data → Useful Report</h3>
+   <p>Real-world style practice: raw data ko clean karke business-ready reporting tak le jana.</p>
+   <div class="steps">
+    <div class="step"><span class="num">01</span><div><strong>Collect & Understand</strong><small>Business requirement aur raw data samjho.</small></div></div>
+    <div class="step"><span class="num">02</span><div><strong>Clean & Transform</strong><small>Duplicates, blanks, formats aur errors handle karo.</small></div></div>
+    <div class="step"><span class="num">03</span><div><strong>Analyse</strong><small>Excel, SQL, Python aur calculations se insights nikalo.</small></div></div>
+    <div class="step"><span class="num">04</span><div><strong>Present</strong><small>Power BI / Excel dashboard aur MIS report banao.</small></div></div>
+   </div>
   </div>
+  <div class="workflow-card">
+   <div class="kicker">Career Preparation</div><h3>Sirf Course Nahi — Portfolio Banao</h3>
+   <p>Interview mein “maine seekha hai” se zyada useful hota hai “maine project banaya hai”.</p>
+   <div class="outcomes">
+    <div class="outcome">📁 Portfolio Projects</div><div class="outcome">💼 Resume Project Section</div>
+    <div class="outcome">🔗 LinkedIn Profile Guidance</div><div class="outcome">🐙 GitHub Project Setup</div>
+    <div class="outcome">🧠 Excel Interview Practice</div><div class="outcome">🎤 Dashboard Explanation</div>
+   </div>
+  </div>
+ </div>
 </section>
 
-<section id="skills">
-  <div class="wrap">
-    <div class="sectionHead">
-      <span class="eyebrow">PRACTICAL SKILLS</span>
-      <h2>What you will actually practise.</h2>
-      <p>Designed around tasks that appear in reporting, MIS and entry-level analytics work.</p>
-    </div>
-
-    <div class="careerGrid">
-      <div class="careerCard"><div class="big">🧹</div><h3>Data Cleaning</h3><p>Standardise messy datasets, remove duplicates, handle blanks and prepare usable tables.</p></div>
-      <div class="careerCard"><div class="big">📐</div><h3>Advanced Excel</h3><p>XLOOKUP, INDEX-MATCH, SUMIFS, IF/IFS, PivotTables, charts and dashboard logic.</p></div>
-      <div class="careerCard"><div class="big">🔄</div><h3>Power Query</h3><p>Build repeatable transformations instead of manually cleaning the same report every time.</p></div>
-      <div class="careerCard"><div class="big">🗃️</div><h3>SQL Analytics</h3><p>Filtering, aggregation, joins, subqueries, CTEs, views and window functions.</p></div>
-      <div class="careerCard"><div class="big">📊</div><h3>Power BI & DAX</h3><p>Relationships, data models, measures, KPIs, slicers and management dashboards.</p></div>
-      <div class="careerCard"><div class="big">🐍</div><h3>Python Analytics</h3><p>Python basics, Pandas, NumPy, dataframes and visual analysis with Matplotlib.</p></div>
-    </div>
+<section class="section" id="projects">
+ <div class="container">
+  <div class="head"><div class="kicker">Portfolio Projects</div><h2>Build Projects That Show Your Skills</h2><p>Project ideas are designed around common reporting, sales and business-analysis workflows.</p></div>
+  <div class="projects">
+   <div class="project"><h3>Sales MIS Reporting System</h3><p>Monthly/weekly reporting workflow.</p><ul><li>Excel cleaning & formulas</li><li>Pivot reporting</li><li>KPI summary</li></ul></div>
+   <div class="project"><h3>Business Performance Dashboard</h3><p>Interactive management dashboard.</p><ul><li>Power Query</li><li>Data model</li><li>DAX measures</li></ul></div>
+   <div class="project"><h3>Customer & Sales Analysis</h3><p>Business questions using SQL.</p><ul><li>JOIN & GROUP BY</li><li>CTE & windows</li><li>Insight generation</li></ul></div>
+   <div class="project"><h3>Exploratory Data Analysis</h3><p>Python-based analytical workflow.</p><ul><li>Pandas & NumPy</li><li>Data cleaning</li><li>EDA</li></ul></div>
+   <div class="project"><h3>Messy Excel Data Challenge</h3><p>Practice common workplace errors.</p><ul><li>Duplicate handling</li><li>Text/date cleanup</li><li>Power Query</li></ul></div>
+   <div class="project"><h3>End-to-End Analytics Case</h3><p>Raw data to business presentation.</p><ul><li>Clean → Analyse</li><li>Dashboard</li><li>Business summary</li></ul></div>
   </div>
+ </div>
 </section>
 
-
-<section id="career" class="salarySection">
-  <div class="wrap">
-    <div class="sectionHead">
-      <span class="eyebrow">CAREER & SALARY</span>
-      <h2>Build skills for roles that use data every day.</h2>
-      <p>Salary varies by company, location, experience, interview performance and actual job responsibilities.</p>
+<section class="section soft" id="mis">
+ <div class="container">
+  <div class="mis-box">
+   <div>
+    <div class="kicker" style="color:#e5bd51">MIS EXECUTIVE TRACK</div>
+    <h2>Become Job-Ready for MIS Reporting Roles</h2>
+    <p>Daily, weekly aur monthly reporting workflows par practical focus — especially Excel, Power Query, dashboards aur KPI reporting.</p>
+    <div class="mis-list">
+     <span>✓ Daily / Weekly / Monthly Reports</span><span>✓ Advanced Excel & Lookups</span>
+     <span>✓ PivotTables & Dashboards</span><span>✓ Data Cleaning</span>
+     <span>✓ KPI Tracking</span><span>✓ Power Query</span>
+     <span>✓ Management Reports</span><span>✓ Interview Practice</span>
     </div>
-    <div class="salaryWrap">
-      <div class="salaryHero">
-        <span class="eyebrow">POTENTIAL CAREER RANGE</span>
-        <h2>Skill Up. Build Proof. Apply Better.</h2>
-        <div class="salaryBig">₹15K – ₹50K+</div>
-        <p>Illustrative monthly salary range across selected entry-level and early-career MIS, reporting and analytics roles. This is not a salary guarantee.</p>
-        <p class="salaryNote">*Actual offers depend on employer, role, location, experience, skills and selection process.</p>
-      </div>
-      <div class="salaryTableCard">
-        <h3>Career Roles</h3>
-        <table class="salaryTable">
-          <thead><tr><th>Role</th><th>Illustrative range*</th></tr></thead>
-          <tbody>
-            <tr><td>MIS Executive</td><td>₹15K–₹30K</td></tr>
-            <tr><td>Reporting Executive</td><td>₹18K–₹35K</td></tr>
-            <tr><td>Junior Data Analyst</td><td>₹20K–₹40K</td></tr>
-            <tr><td>Power BI Analyst</td><td>₹25K–₹50K+</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="placement">
-      <span class="eyebrow">JOB & PLACEMENT SUPPORT</span>
-      <h3 style="font-size:24px;margin:12px 0 0;color:#102b4e">From learning to job applications.</h3>
-      <div class="placementGrid">
-        <div class="placementItem"><b>📄 Resume</b><span>Project-focused resume guidance</span></div>
-        <div class="placementItem"><b>💼 LinkedIn</b><span>Profile and portfolio guidance</span></div>
-        <div class="placementItem"><b>🎯 Interviews</b><span>Excel, SQL & Power BI practice</span></div>
-        <div class="placementItem"><b>🚀 Job Search</b><span>Application and career guidance</span></div>
-      </div>
-    </div>
+   </div>
+   <div class="career-box">
+    <h3>Possible Career Roles</h3>
+    <div class="role"><strong>MIS Executive</strong><span>Reporting</span></div>
+    <div class="role"><strong>Reporting Executive</strong><span>MIS / Excel</span></div>
+    <div class="role"><strong>Junior Data Analyst</strong><span>Analytics</span></div>
+    <div class="role"><strong>Power BI Analyst</strong><span>BI / Dashboard</span></div>
+    <div class="role"><strong>Business Reporting Associate</strong><span>Reporting</span></div>
+   </div>
   </div>
+ </div>
 </section>
 
-<section id="projects">
-  <div class="wrap">
-    <div class="sectionHead">
-      <span class="eyebrow">PORTFOLIO PROJECTS</span>
-      <h2>Build work you can actually show.</h2>
-      <p>Projects connect tools to business questions and give your portfolio a clear story.</p>
-    </div>
-
-    <div class="projectGrid">
-      <div class="project">
-        <div class="projectTag">PROJECT 01 • EXCEL + MIS</div>
-        <h3>Sales MIS Reporting System</h3>
-        <p>Clean monthly sales data, calculate KPIs, create management summaries and build a repeatable reporting workflow.</p>
-        <div class="projectTools"><span>Excel</span><span>Power Query</span><span>PivotTable</span><span>MIS</span></div>
-      </div>
-      <div class="project">
-        <div class="projectTag">PROJECT 02 • POWER BI</div>
-        <h3>Business Performance Dashboard</h3>
-        <p>Transform data, create a model, write measures and present sales, profit and trend KPIs in an interactive dashboard.</p>
-        <div class="projectTools"><span>Power BI</span><span>DAX</span><span>Power Query</span><span>KPI</span></div>
-      </div>
-      <div class="project">
-        <div class="projectTag">PROJECT 03 • SQL</div>
-        <h3>Customer & Sales Analysis</h3>
-        <p>Answer business questions using joins, aggregations, CTEs and window functions on relational datasets.</p>
-        <div class="projectTools"><span>SQL</span><span>Joins</span><span>CTE</span><span>Windows</span></div>
-      </div>
-      <div class="project">
-        <div class="projectTag">PROJECT 04 • PYTHON</div>
-        <h3>Exploratory Data Analysis</h3>
-        <p>Load, clean, inspect and visualise a business dataset with Pandas, NumPy and Matplotlib.</p>
-        <div class="projectTools"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span></div>
-      </div>
-      <div class="project">
-        <div class="projectTag">PROJECT 05 • DATA CLEANING</div>
-        <h3>Messy Excel Data Challenge</h3>
-        <p>Find and fix real-world formatting, duplicates, missing values and inconsistent entries before reporting.</p>
-        <div class="projectTools"><span>Excel</span><span>Power Query</span><span>Cleaning</span></div>
-      </div>
-      <div class="project">
-        <div class="projectTag">PROJECT 06 • CAPSTONE</div>
-        <h3>End-to-End Analytics Case</h3>
-        <p>Take one business problem from raw data through analysis to a management-ready dashboard and insight summary.</p>
-        <div class="projectTools"><span>Excel</span><span>SQL</span><span>Python</span><span>Power BI</span></div>
-      </div>
-    </div>
+<section class="section" id="career">
+ <div class="container">
+  <div class="head"><div class="kicker">Career Information</div><h2>Career Roles & Salary Context</h2><p>Salary figures are illustrative market ranges, not a guarantee. Actual offers vary by employer, city, experience, skills and selection process.</p></div>
+  <div class="salary-box">
+   <div>
+    <h2>Build Skills That Can Open Multiple Entry-Level Paths</h2>
+    <div class="salary-range">₹15K – ₹50K+</div>
+    <p class="salary-note">Illustrative monthly range across selected entry-level and early-career MIS, reporting and analytics roles. This is not a salary guarantee.</p>
+   </div>
+   <div class="salary-roles">
+    <h3>Career Roles</h3>
+    <div>MIS Executive</div><div>Reporting Executive</div><div>Junior Data Analyst</div><div>Power BI Analyst</div><div>Business Reporting Associate</div>
+   </div>
   </div>
+ </div>
 </section>
 
-<section id="mis" class="misSection">
-  <div class="wrap">
-    <div class="sectionHead">
-      <span class="eyebrow">MIS EXECUTIVE TRACK</span>
-      <h2>More than Excel: learn the reporting workflow.</h2>
-      <p>Build the practical foundation for MIS and reporting responsibilities.</p>
-    </div>
-
-    <div class="misGrid">
-      <div class="misCard">
-        <h3>📋 MIS Reporting Skills</h3>
-        <div class="misItems">
-          <div class="misItem"><b>Daily / Weekly / Monthly Reports</b><span>Structure</span></div>
-          <div class="misItem"><b>Advanced Excel & Lookups</b><span>Automation</span></div>
-          <div class="misItem"><b>PivotTables & Dashboards</b><span>Analysis</span></div>
-          <div class="misItem"><b>Data Cleaning</b><span>Accuracy</span></div>
-          <div class="misItem"><b>KPI Tracking</b><span>Management</span></div>
-          <div class="misItem"><b>Power Query</b><span>Repeatability</span></div>
-        </div>
-      </div>
-
-      <div class="misCard">
-        <h3>💼 Career Preparation</h3>
-        <div class="misItems">
-          <div class="misItem"><b>Resume Project Section</b><span>Portfolio</span></div>
-          <div class="misItem"><b>LinkedIn Profile Guidance</b><span>Visibility</span></div>
-          <div class="misItem"><b>GitHub Project Setup</b><span>Proof of work</span></div>
-          <div class="misItem"><b>Excel Interview Practice</b><span>Questions</span></div>
-          <div class="misItem"><b>SQL Interview Practice</b><span>Queries</span></div>
-          <div class="misItem"><b>Dashboard Explanation</b><span>Communication</span></div>
-        </div>
-      </div>
-    </div>
+<section class="cta">
+ <div class="container">
+  <div class="cta-box">
+   <div><div class="kicker" style="color:#e6bd50">JAIPUR • JHOTWARA</div><h2>Job ke liye skills strong karni hain?</h2><p>Excel, Power BI, SQL, Python aur MIS skills ke saath practical career track start karein — projects, portfolio aur interview preparation ke saath.</p></div>
+   <a class="btn green" target="_blank" href="https://wa.me/916350566010?text=Hello%2C%20mujhe Jaipur mein Data Analytics%20ya%20MIS%20career training ke liye enquiry karni hai.">💬 Career Enquiry</a>
   </div>
+ </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="ctaBox">
-      <span class="eyebrow">START YOUR LEARNING JOURNEY</span>
-      <h2 style="margin-top:14px">Want to know the batch and training details?</h2>
-      <p>Contact us for current batch information, course structure and practical learning guidance in Jhotwara, Jaipur.</p>
-      <div class="buttons" style="justify-content:center">
-        <a class="btn whatsapp" href="https://wa.me/916350566010?text=Hello%2C%20I%20want%20details%20about%20Data%20Analytics%20%26%20MIS%20training." target="_blank">💬 WhatsApp for Details</a>
-        <a class="btn secondary" href="tel:+916350566010">📞 +91 63505 66010</a>
-      </div>
+<section class="section" id="contact">
+ <div class="container">
+  <div class="head"><div class="kicker">Contact</div><h2>Data Analytics & MIS — Jaipur</h2><p>Training details, career guidance aur batch enquiry ke liye direct contact karein.</p></div>
+  <div class="contact-grid">
+   <div class="contact-card">
+    <h3>Contact & Location</h3>
+    <div class="line"><span class="label">Address</span><strong>58A, Gosai Marg, Udyog Nagar, Jhotwara, Jaipur, Rajasthan 302012</strong></div>
+    <div class="line"><span class="label">Phone</span><strong>6350566010</strong></div>
+    <div class="line"><span class="label">Focus</span><span>Advanced Excel • Power BI • SQL • Python • MIS</span></div>
+    <div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:17px">
+     <a class="btn primary" href="tel:+916350566010">📞 Call Now</a>
+     <a class="btn green" target="_blank" href="https://wa.me/916350566010?text=Hello%2C%20I want Data Analytics and MIS training details.">💬 WhatsApp</a>
+     <a class="btn dark" target="_blank" href="https://www.google.com/maps/search/?api=1&query=58A%2C%20Gosai%20Marg%2C%20Udyog%20Nagar%2C%20Jhotwara%2C%20Jaipur%2C%20Rajasthan%20302012">🗺️ Directions</a>
     </div>
+   </div>
+   <a class="map-card" target="_blank" href="https://www.google.com/maps/search/?api=1&query=58A%2C%20Gosai%20Marg%2C%20Udyog%20Nagar%2C%20Jhotwara%2C%20Jaipur%2C%20Rajasthan%20302012">
+    <div><strong>📍 Jhotwara, Jaipur</strong><span>Open location in Google Maps →</span></div>
+   </a>
   </div>
+ </div>
 </section>
 
-<section id="contact">
-  <div class="wrap">
-    <div class="sectionHead">
-      <span class="eyebrow">CONTACT & LOCATION</span>
-      <h2>Find us in Jhotwara, Jaipur.</h2>
-      <p>Use the map for directions or contact us directly for training details.</p>
-    </div>
+<a class="float" target="_blank" href="https://wa.me/916350566010?text=Hello%2C%20mujhe Data Analytics ya MIS career training details chahiye." aria-label="WhatsApp">💬</a>
+<div class="mobilebar"><a class="mcall" href="tel:+916350566010">📞 Call</a><a class="mwa" target="_blank" href="https://wa.me/916350566010?text=Hello%2C%20mujhe Data Analytics ya MIS career training details chahiye.">💬 WhatsApp</a></div>
 
-    <div class="contactGrid">
-      <div class="contactCard">
-        <span>📍 TRAINING LOCATION</span>
-        <strong>58A, Gosai Marg, Udyog Nagar, Jhotwara, Jaipur, Rajasthan 302012</strong>
-        <a class="mapBtn" href="https://maps.app.goo.gl/jUSizzP7Bh6d6jA6A" target="_blank">📍 Open Google Maps ↗</a>
-      </div>
-      <div class="contactCard">
-        <span>📞 CALL / WHATSAPP</span>
-        <strong>+91 63505 66010</strong>
-        <a class="mapBtn" href="https://wa.me/916350566010?text=Hello%2C%20I%20want%20details%20about%20Data%20Analytics%20%26%20MIS%20training." target="_blank">💬 WhatsApp Us ↗</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="wrap foot">
-    <span>© <span id="year"></span> Data Analytics & MIS Executive Training</span>
-    <span>Jhotwara, Jaipur • Excel • SQL • Power BI • Python</span>
-  </div>
+<footer style="background:#0d1828;color:#bfcbd8;text-align:center;padding:28px 0;font-size:10px">
+ <strong style="color:#fff;font-size:12px">Data Analytics & MIS</strong><br>
+ Advanced Excel • Power BI • SQL • Python • MIS Reporting • Jaipur<br>
+ <span style="display:block;margin-top:6px">© 2026 Data Analytics & MIS. All rights reserved.</span>
 </footer>
 
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+const messages=[
+ {main:'💼 <b>Job dhoondh rahe hain? Data Analytics & MIS ke liye Jaipur mein contact karein.</b>',sub:'Advanced Excel • Power BI • SQL • Python • MIS Reporting • Interview Preparation',href:'https://wa.me/916350566010?text=Hello%2C%20mujhe Jaipur mein MIS job ke liye training aur career guidance chahiye.'},
+ {main:'📊 <b>MIS job ke liye Excel aur Reporting skills strong karni hain?</b>',sub:'Advanced Excel • XLOOKUP • PivotTable • Power Query • MIS Reports',href:'https://wa.me/916350566010?text=Hello%2C%20mujhe MIS Executive job ke liye Excel training details chahiye.'},
+ {main:'🔗 <b>LinkedIn par professional profile banana hai?</b>',sub:'Resume • LinkedIn • GitHub • Projects • Interview-focused career preparation',href:'https://wa.me/916350566010?text=Hello%2C%20mujhe resume aur LinkedIn profile guidance chahiye.'},
+ {main:'📈 <b>Data Analyst banna chahte hain? Practical skills se start karein.</b>',sub:'SQL • Power BI • Python • Data Cleaning • Dashboards • Projects',href:'https://wa.me/916350566010?text=Hello%2C%20mujhe Data Analyst career training details chahiye.'},
+ {main:'🎯 <b>Jaipur mein MIS / Data Analytics career ke liye enquiry karein.</b>',sub:'Practical datasets + portfolio projects + interview preparation',href:'https://wa.me/916350566010?text=Hello%2C%20mujhe Jaipur mein Data Analytics aur MIS career training chahiye.'}
+];
+let i=0;
+setInterval(()=>{
+ i=(i+1)%messages.length;
+ const a=messages[i],main=document.getElementById('careerMain'),sub=document.getElementById('careerSub'),btn=document.getElementById('careerBtn');
+ main.style.opacity='0';sub.style.opacity='0';
+ setTimeout(()=>{main.innerHTML=a.main;sub.textContent=a.sub;btn.href=a.href;main.style.opacity='1';sub.style.opacity='1'},180);
+},4500);
+function toggleMenu(){
+ const n=document.getElementById('navlinks');
+ if(n.style.display==='flex'){n.style.display='';return}
+ n.style.display='flex';n.style.position='absolute';n.style.top='68px';n.style.left='0';n.style.right='0';n.style.background='#fff';n.style.padding='15px 4%';n.style.flexDirection='column';n.style.alignItems='stretch';n.style.borderBottom='1px solid #dfe6ef';
+}
 </script>
 </body>
 </html>
